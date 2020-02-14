@@ -5,14 +5,13 @@ this is a auto push logs to dingding....
 'DingDingRobotLog' => [
             'driver' => 'custom',
             'via'    => \Zhufq\Logfordingding\CreateCustomLogger::class,
-//            'via'    => \Vendor\CoderYee\WeiWorkRobotLogHandler\WeiWorkRobotLogHandler::class,
-            //host : 企业微信机器人地址
+            //host : 钉钉机器人地址
             'host'   => env('LOG_SLACK_Dinging_URL'),
             //level：错误日志记录级别
             'level'  => 'DEBUG',
             //日志最大长度
             'msg_length_max'  => 5000,
-            //push 推送开关，false时不推送日志到企业微信机器人。
+            //push 推送开关，false时不推送日志到钉钉微信机器人。
             'push'   => true,
             // Curl 连接超时时间(秒)
             'connect_timeout' => 5,
@@ -26,7 +25,8 @@ this is a auto push logs to dingding....
 			
 			
 测试代码
-  $logger = Log::stack(['DingDingRobotLog']);
+        $logger = Log::stack(['DingDingRobotLog']);
+	
         $logger->pushProcessor(function ($record) {
             $record['extra']['dummy'] = 'Hello world!';
 
@@ -34,6 +34,8 @@ this is a auto push logs to dingding....
         });
 
         $logger->info('测试日志系统',['ceshi'=>222222]);
+		
+		其实你可以直接  Log::info("测试日志");
 
 钉钉群显示
 {
