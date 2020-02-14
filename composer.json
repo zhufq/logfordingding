@@ -1,0 +1,22 @@
+{
+    "name": "zhufq/logfordingding",
+    "description": "this is a tools, auto push logs to dingding....",
+    "type": "library",
+    "authors": [
+        {
+            "name": "zhufq",
+            "email": "530497500@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zhufq\\Logfordingding\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "extra": {
+    }
+}
