@@ -30,7 +30,7 @@ class DingdingWebhookHander extends AbstractProcessingHandler
      * 调用机器人发送日志消息
      * @param array $record
      */
-    protected function write(array $record)
+    protected function write(array $record):void
     {
         $message = json_encode(['app_url' => config('app.url')] + $record, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT |
                                                                            JSON_UNESCAPED_SLASHES);

@@ -1,6 +1,6 @@
 # logfordingding
 this is a auto push logs to dingding....
-#### 在config/logging中添加如下代码代码
+#### 在config/logging中的channels中添加如下代码代码
 ```javascript
 'DingDingRobotLog' => [
             'driver' => 'custom',
