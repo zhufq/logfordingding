@@ -1,5 +1,5 @@
 # logfordingding
-this is a auto push logs to dingding....
+laravel日志钉钉机器人推送异常数据到钉钉还可以手动打印调试日记....
 #### 在config/logging中的channels中添加如下代码代码
 ```javascript
 'DingDingRobotLog' => [
@@ -11,7 +11,7 @@ this is a auto push logs to dingding....
             'level'  => 'DEBUG',
             //日志最大长度
             'msg_length_max'  => 5000,
-            //push 推送开关，false时不推送日志到钉钉微信机器人。
+            //push 推送开关，false时不推送日志到钉钉机器人。
             'push'   => true,
             // Curl 连接超时时间(秒)
             'connect_timeout' => 5,
@@ -25,15 +25,12 @@ this is a auto push logs to dingding....
 			
 			
 测试代码
-        $logger = Log::stack(['DingDingRobotLog']);
-	
-        $logger->pushProcessor(function ($record) {
-            $record['extra']['dummy'] = 'Hello world!';
+        1手动方式
+        Log::info("测试日志") -----方便打印调试;
+        2自动方式
+        系统的异常会也会自动记录日志,由于我们加了钉钉的通道,所以系统的异常会自动推送到钉钉群。
+        
 
-            return $record;
-        });
-
-        $logger->info('测试日志系统',['ceshi'=>222222]);
 		
 		其实你可以直接  Log::info("测试日志");
 
