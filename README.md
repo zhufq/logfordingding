@@ -1,5 +1,5 @@
 # logfordingding
-laravel日志钉钉机器人推送异常数据到钉钉还可以手动打印调试日记....
+laravel日志钉钉机器人推送异常数据到钉钉/还可以手动打印调试日记....
 #### 在config/logging中的channels中添加如下代码代码
 ```javascript
 'DingDingRobotLog' => [
